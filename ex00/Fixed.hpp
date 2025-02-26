@@ -24,4 +24,12 @@ class Fixed
 // copy assignment operator
 // called When an existing object is assigned the value of another existing object
 
+//fract bits
+// in fixed-point system a number is scaled by 2^fract_bits
+// when displaying the values it is divided by 2^fract_bits to retrieve the actual num
+// 2^8 = 256
+// 3.25 x 256 = 832
+// -> fixed precision (no floating point errors)
+// -> speed (less complex therefore faster)
+// -> memory efficient (uses ints which are easier to store and manipulate than floats)
 #endif
