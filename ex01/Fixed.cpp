@@ -2,12 +2,13 @@
 
 const int Fixed::fract_bits = 8;
 
+/* Default constructor */
 Fixed::Fixed() : value(0)
 {
     std::cout << "Default constructor called" << std::endl;
 }
 
-/* 
+/*  Int constructor
 2^x = 1 << x
 2^x is power of 2 meaning always a 1 followed by 0 in binary
 when you shift 1 by x it becomes a representation of the power of 2
@@ -20,7 +21,7 @@ Fixed::Fixed(const int n)
     std::cout << "Int constructor called" << std::endl;
 }
 
-/*
+/* Float constructor
  roundf rounds to x to the nearest int
  same bit shifting operation as before
 */
@@ -29,12 +30,13 @@ Fixed::Fixed(const float n)
      this->value = roundf(n * (1 << fract_bits));
      std::cout << "Float constructor called" << std::endl;
 }
-
+/* Copy Constructor */
 Fixed::Fixed(const Fixed& f) : value(f.value)
 {
     std::cout << "Copy constructor called" << std::endl;
 }
 
+// Copy assignment operator
 // returns a reference to the current object
 // operator= is the overloaded assignment operator
 Fixed& Fixed::operator=(const Fixed& other)
