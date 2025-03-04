@@ -36,7 +36,7 @@ Fixed::Fixed(const Fixed& f) : value(f.value)
     std::cout << "Copy constructor called" << std::endl;
 }
 
-// Copy assignment operator
+// Copy Assignment operator
 // returns a reference to the current object
 // operator= is the overloaded assignment operator
 Fixed& Fixed::operator=(const Fixed& other)
