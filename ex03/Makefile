@@ -6,14 +6,16 @@
 #    By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 10:22:43 by dhuss             #+#    #+#              #
-#    Updated: 2025/03/04 10:22:44 by dhuss            ###   ########.fr        #
+#    Updated: 2025/03/04 14:34:26 by dhuss            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 FLAGS = -Wall -Werror -Wextra
 CPPFILES = main.cpp\
-	Fixed.cpp
+	Fixed.cpp\
+	Point.cpp\
+	bsp.cpp
 OFILES = $(CPPFILES:.cpp=.o)
 NAME = BSP
 
