@@ -1,20 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/04 10:18:04 by dhuss             #+#    #+#             */
+/*   Updated: 2025/03/04 10:18:24 by dhuss            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
 #include <iostream>
 
-class Fixed
+class	Fixed
 {
-    private:
-        int value;
-        static const int fract_bits;
-    public:
-        Fixed();
-        Fixed(const Fixed& f);
-        Fixed& operator=(const Fixed& other);
-        ~Fixed();
-        int     getRawBits( void ) const;
-        void    setRawBits(int const raw);
+	private:
+		int value;
+		static const int fract_bits;
+	public:
+		Fixed();
+		Fixed(const Fixed& f);
+		Fixed& operator=(const Fixed& other);
+		~Fixed();
+		int		getRawBits( void ) const;
+		void	setRawBits(int const raw);
 };
 
 // copy constructor

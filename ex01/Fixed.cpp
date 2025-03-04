@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/04 10:19:09 by dhuss             #+#    #+#             */
+/*   Updated: 2025/03/04 10:19:10 by dhuss            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 const int Fixed::fract_bits = 8;
@@ -5,7 +17,7 @@ const int Fixed::fract_bits = 8;
 /* Default constructor */
 Fixed::Fixed() : value(0)
 {
-    std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 /*  Int constructor
@@ -17,8 +29,8 @@ when you shift 1 by x it becomes a representation of the power of 2
 */
 Fixed::Fixed(const int n)
 {
-    this->value = n << fract_bits;
-    std::cout << "Int constructor called" << std::endl;
+	this->value = n << fract_bits;
+	std::cout << "Int constructor called" << std::endl;
 }
 
 /* Float constructor
@@ -27,13 +39,13 @@ Fixed::Fixed(const int n)
 */
 Fixed::Fixed(const float n)
 {
-     this->value = roundf(n * (1 << fract_bits));
-     std::cout << "Float constructor called" << std::endl;
+	 this->value = roundf(n * (1 << fract_bits));
+	 std::cout << "Float constructor called" << std::endl;
 }
 /* Copy Constructor */
 Fixed::Fixed(const Fixed& f) : value(f.value)
 {
-    std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 // Copy Assignment operator
@@ -41,51 +53,51 @@ Fixed::Fixed(const Fixed& f) : value(f.value)
 // operator= is the overloaded assignment operator
 Fixed& Fixed::operator=(const Fixed& other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
-    if(this != &other) // need incase of self assignment (a = a)
-    {
-        this->value = other.getRawBits();
-    }
-    return (*this); // returns the current object by reference
+	std::cout << "Copy assignment operator called" << std::endl;
+	if(this != &other) // need incase of self assignment (a = a)
+	{
+		this->value = other.getRawBits();
+	}
+	return (*this); // returns the current object by reference
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
-void    Fixed::setRawBits(int const raw)
+void	Fixed::setRawBits(int const raw)
 {
-    value = raw;
+	value = raw;
 }
 
 int Fixed::getRawBits( void ) const
 {
-    return (value);
+	return (value);
 }
 
 int Fixed::toInt( void ) const
 {
-    return (value >> fract_bits);
+	return (value >> fract_bits);
 }
 
-/* 
-    need to typecast to float to be able to retrive decimal values
-    static_cast is safer then (float)
-    shift bits to left to properly convert back 1 << 8 = 256
-    divide to get the orignal value
+/*
+	need to typecast to float to be able to retrive decimal values
+	static_cast is safer then (float)
+	shift bits to left to properly convert back 1 << 8 = 256
+	divide to get the orignal value
  */
 float Fixed::toFloat( void ) const
 {
-     return (static_cast<float>(value) / (1 << fract_bits));
+	return (static_cast<float>(value) / (1 << fract_bits));
 }
 
-/* 
-    goal: tell compiler how do handle this - std::cout << fixed.value;
-    inserts converted float-value into output stream
+/*
+	goal: tell compiler how do handle this - std::cout << fixed.value;
+	inserts converted float-value into output stream
  */
 std::ostream& operator<<(std::ostream& os, const Fixed& value)
 {
-    os << value.toFloat();
-    return (os);
+	os << value.toFloat();
+	return (os);
 }

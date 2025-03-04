@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/04 10:22:15 by dhuss             #+#    #+#             */
+/*   Updated: 2025/03/04 10:22:16 by dhuss            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 const int Fixed::fract_bits = 8;
@@ -61,7 +73,7 @@ float Fixed::toFloat( void ) const
 
 //-------overloaded comparison operators---------//
 
-bool    Fixed::operator>(const Fixed& other) const 
+bool    Fixed::operator>(const Fixed& other) const
 {
     return (this->value > other.value);
 }
@@ -110,7 +122,7 @@ Fixed Fixed::operator-(const Fixed& other) const
 }
 
 /* due to multiplcation the result is double scaled by 2^fractbits
-which is why we need to shift to the right to get the single scaled result 
+which is why we need to shift to the right to get the single scaled result
 When we multiply two fixed-point numbers, we shift right because the result is too large*/
 Fixed Fixed::operator*(const Fixed& other) const
 {
@@ -121,7 +133,7 @@ Fixed Fixed::operator*(const Fixed& other) const
 }
 
 /* A = 10 (2560)
-   B = 2 (512) 
+   B = 2 (512)
     2560 / 512 = 5 (value is not scaled)
     that is why first value is scaled up
     2560 << 8 = 655360
@@ -144,8 +156,8 @@ Fixed& Fixed::operator++()
     return (*this);
 }
 
-/* post-increment operator 
-int parameter is a dummy that only serves to distinguish pre- and postincrement 
+/* post-increment operator
+int parameter is a dummy that only serves to distinguish pre- and postincrement
 not returning by reference since we want the old state of the object and
 incrementing after returning
 */

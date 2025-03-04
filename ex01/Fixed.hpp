@@ -6,26 +6,26 @@
 
 class Fixed
 {
-    private:
-        int value;
-        static const int fract_bits;
-    public:
-        Fixed();
-        Fixed(const int n);
-        Fixed(const float n);
-        Fixed(const Fixed& f);
-        Fixed& operator=(const Fixed& other);
-        ~Fixed();
-        int     getRawBits( void ) const;
-        void    setRawBits(int const raw);
-        float   toFloat( void ) const;
-        int     toInt( void ) const;
-        bool operator>(const Fixed& other) const;
-        bool operator>=(const Fixed& other) const;
-        bool operator<(const Fixed& other) const;
-        bool operator<=(const Fixed& other) const;
-        bool operator==(const Fixed& other) const;
-        bool operator!=(const Fixed& other) const;
+	private:
+		int value;
+		static const int fract_bits;
+	public:
+		Fixed();
+		Fixed(const int n);
+		Fixed(const float n);
+		Fixed(const Fixed& f);
+		Fixed& operator=(const Fixed& other);
+		~Fixed();
+		int		getRawBits( void ) const;
+		void	setRawBits(int const raw);
+		float	toFloat( void ) const;
+		int		toInt( void ) const;
+		bool	operator>(const Fixed& other) const;
+		bool	operator>=(const Fixed& other) const;
+		bool	operator<(const Fixed& other) const;
+		bool	operator<=(const Fixed& other) const;
+		bool	operator==(const Fixed& other) const;
+		bool	operator!=(const Fixed& other) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& value);
