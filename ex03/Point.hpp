@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 10:23:11 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/04 13:41:26 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/04 15:27:14 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Point
 		Point();
 		Point(const float nbr1, const float nbr2);
 		Point(const Point& src);
-		// Point& Point::operator=(const Point& other) = delete; // prevents the assignemnt operator from being used in this context
+		Point& operator=(const Point& other);
 		~Point();
 		Fixed get_x( void ) const;
 		Fixed get_y( void ) const;

@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 10:18:04 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/04 10:18:24 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/04 15:18:19 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,6 @@ class	Fixed
 		int		getRawBits( void ) const;
 		void	setRawBits(int const raw);
 };
-
-// copy constructor
-// there is a default copy constructor
-// copy constructed is called when object is created from an existing object
-
-// copy assignment operator
-// called When an existing object is assigned the value of another existing object
 
 //fract bits
 // in fixed-point system a number is scaled by 2^fract_bits

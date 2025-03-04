@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 10:19:09 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/04 10:19:10 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/04 15:15:10 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ Fixed::Fixed(const int n)
 }
 
 /* Float constructor
- roundf rounds to x to the nearest int
- same bit shifting operation as before
+	roundf rounds to x to the nearest int
+	same bit shifting operation as before
 */
 Fixed::Fixed(const float n)
 {
-	 this->value = roundf(n * (1 << fract_bits));
-	 std::cout << "Float constructor called" << std::endl;
+	this->value = roundf(n * (1 << fract_bits));
+	std::cout << "Float constructor called" << std::endl;
 }
 /* Copy Constructor */
 Fixed::Fixed(const Fixed& f) : value(f.value)
@@ -54,11 +54,11 @@ Fixed::Fixed(const Fixed& f) : value(f.value)
 Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if(this != &other) // need incase of self assignment (a = a)
+	if(this != &other)
 	{
 		this->value = other.getRawBits();
 	}
-	return (*this); // returns the current object by reference
+	return (*this);
 }
 
 Fixed::~Fixed()
@@ -86,7 +86,7 @@ int Fixed::toInt( void ) const
 	static_cast is safer then (float)
 	shift bits to left to properly convert back 1 << 8 = 256
 	divide to get the orignal value
- */
+*/
 float Fixed::toFloat( void ) const
 {
 	return (static_cast<float>(value) / (1 << fract_bits));
@@ -95,7 +95,7 @@ float Fixed::toFloat( void ) const
 /*
 	goal: tell compiler how do handle this - std::cout << fixed.value;
 	inserts converted float-value into output stream
- */
+*/
 std::ostream& operator<<(std::ostream& os, const Fixed& value)
 {
 	os << value.toFloat();

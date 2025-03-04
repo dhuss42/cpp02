@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 10:21:54 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/04 14:34:11 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/04 15:20:50 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 // calculate vectors AB and AP
 	// AB = bx - ax, by - ay
 // do that for every line of the triagle
-
 // BC, BP
 // CA, CA
-
 // calculate cross product for all pairs
 	// ax * by - bx * ay
 // if the cross product is always positive or always negative then the point is to the left of the line (AB, BC, CA)

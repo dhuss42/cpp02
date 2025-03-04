@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 10:20:45 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/04 10:20:46 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/04 15:27:58 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ Fixed::Fixed(const Fixed& f) : value(f.value)
 Fixed& Fixed::operator=(const Fixed& other)
 {
 	if(this != &other)
-	{
 		this->value = other.getRawBits();
-	}
 	return (*this);
 }
 
@@ -139,7 +137,7 @@ Fixed Fixed::operator*(const Fixed& other) const
 	2560 << 8 = 655360
 	655360 / 512 = 1280
 	1280 / 256 = 5.0
- When we divide, the opposite happens: the result is too small, so we shift left before dividing*/
+When we divide, the opposite happens: the result is too small, so we shift left before dividing*/
 Fixed Fixed::operator/(const Fixed& other) const
 {
 	Fixed result;

@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 10:18:37 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/04 10:18:39 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/04 15:10:51 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int main( void )
 	Fixed c;
 
 	c = b;
-
 	a.setRawBits(42);
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;

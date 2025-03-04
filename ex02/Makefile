@@ -6,7 +6,7 @@
 #    By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 10:22:10 by dhuss             #+#    #+#              #
-#    Updated: 2025/03/04 10:22:11 by dhuss            ###   ########.fr        #
+#    Updated: 2025/03/04 15:19:44 by dhuss            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FLAGS = -Wall -Werror -Wextra
 CPPFILES = main.cpp\
 	Fixed.cpp
 OFILES = $(CPPFILES:.cpp=.o)
-NAME = BSP
+NAME = Now_were_talking
 
 $(NAME) : $(OFILES)
 	$(CC) $(FLAGS) $(OFILES) -o $(NAME)
